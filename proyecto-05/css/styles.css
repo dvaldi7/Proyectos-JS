@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+    margin-top: 20px;
+    text-align: center;
+    color: #171263;
+}
+
+.tables{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tables_item{
+    width: 19%;
+    background-image: radial-gradient(circle at 43.84% 120.44%, #ff8d75 0, #ff817f 8.33%, #ff7487 16.67%, #ff678c 25%, #ff5b8e 33.33%, #f34e8c 41.67%, #d44286 50%, #b5377e 58.33%, #992f76 66.67%, #802a6f 75%, #6b2669 83.33%, #582464 91.67%, #472261 100%);
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    margin-bottom: 50px;
+}
+
+.tables_title{
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.tables_list{
+    color: white;
+    text-align: center;   
+}
+
+ul{
+    list-style: none;
+}
+li.list_item {
+    margin-bottom: 5px;
+}
