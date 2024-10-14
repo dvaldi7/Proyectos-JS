@@ -1,0 +1,29 @@
+*{
+    background-color: rgb(171, 7, 247);
+}
+
+.layout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+}
+
+.layout-main{
+    width: 50%;
+    text-align: center;   
+}
+
+.main-star{
+    position: absolute;
+    font-size: 70px;
+
+}
+
+
+.grey{
+    color: rgb(129, 127, 127);
+}
