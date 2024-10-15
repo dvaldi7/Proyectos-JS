@@ -32,18 +32,24 @@
     
 }
 
-.main-star:hover{
-    animation: bigger 1s linear;
-    opacity: 1;
-    visibility: visible;
-}
-
 .main-star--grey{
     color: rgb(129, 127, 127);
-    z-index: 2;
+    z-index: 1;
 }
 
 .main-star--yellow{
     color: yellow;
     z-index: 1;
+    opacity: 1;
+    visibility: hidden;
+}
+
+.visible{
+    animation: bigger 1s linear;
+    opacity: 1;
+    visibility: visible;
+}
+
+.yellow-color{
+    color: yellow;
 }
