@@ -1,5 +1,5 @@
 *{
-    background-color: rgb(171, 7, 247);
+    background-color: rgb(29, 18, 34);
 }
 
 .layout{
@@ -19,11 +19,31 @@
 
 .main-star{
     position: absolute;
-    font-size: 70px;
+    font-size: 100px;
+    cursor: pointer;
 
 }
 
+@keyframes bigger {
+    100%{
+        transform: scale(1.7);
+        opacity: 0;
+    }
+    
+}
 
-.grey{
+.main-star:hover{
+    animation: bigger 1s linear;
+    opacity: 1;
+    visibility: visible;
+}
+
+.main-star--grey{
     color: rgb(129, 127, 127);
+    z-index: 2;
+}
+
+.main-star--yellow{
+    color: yellow;
+    z-index: 1;
 }
