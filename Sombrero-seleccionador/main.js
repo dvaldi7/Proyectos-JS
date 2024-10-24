@@ -18,7 +18,46 @@
  *    pero indicándole al alumno que la decisión ha sido complicada).
  */
 
-let casas = ["Griffindor", "Slyhering", "Hufflepuff", "Ravenclaw"];
+let griffindor = 0, slyhering = 0, hufflepuff = 0, ravenclaw = 0;
+let nombre = prompt("Hola, Bienvenido a Hogwarts, soy el sombrero seleccionador,"+ 
+     "cuál es tu nombre?");
+let boton = document.getElementById("btn");
 
-let nombre = prompt("Hola, Bienvenido a Hogwarts, soy el sombrero seleccionador, cuál es tu nombre? ");
-console.log("Hola " + nombre + ", un placer conocerte. Veamos a que casa puedo asignarte... Responde con sinceridad.");
+document.write(`<p>Hola ${nombre}, un placer conocerte. Veamos a que casa 
+    puedo asignarte... Responde con sinceridad.</p>`);
+
+boton.addEventListener("click", pregunta);
+
+function pregunta(){
+    let respuesta = prompt("Cuál es tu mago favorito?" 
+        + "Harry = 0, Draco = 1, Cedric = 2, Cho-Chan = 3");
+        switch (respuesta){
+            case "0": griffindor++;
+            break;
+            case "1": slyhering++;
+            break;
+            case "2": hufflepuff++;
+            break;
+            case "3": ravenclaw++;
+            break;
+        }
+        
+    pregunta2();
+}
+
+function pregunta2(){
+    let respuesta = prompt("Cuál es tu color favorito?" 
+        + "Rojo = 0, Verde = 1, Amarillo = 2, Azul = 3");
+        switch (respuesta){
+            case "0": griffindor++;
+            break;
+            case "1": slyhering++;
+            break;
+            case "2": hufflepuff++;
+            break;
+            case "3": ravenclaw++;
+            break;
+        }
+        console.log("Griffindor = "+ griffindor);
+}
+
