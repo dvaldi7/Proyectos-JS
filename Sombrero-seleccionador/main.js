@@ -19,16 +19,17 @@
  */
 
 let griffindor = 0, slyhering = 0, hufflepuff = 0, ravenclaw = 0;
-let nombre = prompt("Hola, Bienvenido a Hogwarts, soy el sombrero seleccionador,"+ 
+const name = prompt("Hola, Bienvenido a Hogwarts, soy el sombrero seleccionador,"+ 
      "cuál es tu nombre?");
-let boton = document.getElementById("btn");
+let btn = document.getElementById("btn");
 
-document.write(`<p>Hola ${nombre}, un placer conocerte. Veamos a que casa 
+document.write(`<p>Hola ${name}, un placer conocerte. Veamos a que casa 
     puedo asignarte... Responde con sinceridad.</p>`);
 
-boton.addEventListener("click", pregunta);
+btn.addEventListener("click", pregunta);
 
-function pregunta(){
+
+/*function pregunta(){
     let respuesta = prompt("Cuál es tu mago favorito?" 
         + "Harry = 0, Draco = 1, Cedric = 2, Cho-Chan = 3");
         switch (respuesta){
@@ -60,4 +61,4 @@ function pregunta2(){
         }
         console.log("Griffindor = "+ griffindor);
 }
-
+*/

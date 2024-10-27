@@ -6,4 +6,12 @@
 button{
     background-color: blue;
     color: yellow;
+    width: 150px;
+    height: 70px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: green;
+    color: black;
 }
