@@ -22,9 +22,11 @@ let griffindor = 0, slyhering = 0, hufflepuff = 0, ravenclaw = 0;
 const name = prompt("Hola, Bienvenido a Hogwarts, soy el sombrero seleccionador,"+ 
      "cuál es tu nombre?");
 let btn = document.getElementById("btn");
+let text = document.getElementsByClassName("text")[0];
 
-document.write(`<p>Hola ${name}, un placer conocerte. Veamos a que casa 
-    puedo asignarte... Responde con sinceridad.</p>`);
+
+text.innerHTML = `<p>Hola ${name}, un placer conocerte. Veamos a que casa 
+    puedo asignarte... Responde con sinceridad.</p>`;
 
 btn.addEventListener("click", pregunta);
 
