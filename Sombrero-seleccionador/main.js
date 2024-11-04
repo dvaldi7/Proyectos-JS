@@ -18,17 +18,65 @@
  *    pero indicándole al alumno que la decisión ha sido complicada).
  */
 
+//Variables para puntuaciones de las casas
 let griffindor = 0, slyhering = 0, hufflepuff = 0, ravenclaw = 0;
+
+//Saludo en pantalla para recoger el nombre. Nulo se admite como nombre: null
 const name = prompt("Hola, Bienvenido a Hogwarts, soy el sombrero seleccionador,"+ 
      "cuál es tu nombre?");
+
+//Asignación variables para html
 let btn = document.getElementById("btn");
 let text = document.getElementsByClassName("text")[0];
 
-
+//Saludo en documento html
 text.innerHTML = `<p>Hola ${name}, un placer conocerte. Veamos a que casa 
     puedo asignarte... Responde con sinceridad.</p>`;
 
-btn.addEventListener("click", pregunta);
+//preguntas para asignar casa
+const questions = [
+    "1. ¿Qué color te gusta más? \na) Rojo \nb) Verde \nc) Azul \nd) Amarillo",
+    "2. ¿Que animal te gusta más?: \na) León \nb) Serpiente \nc) Cuervo \nd) Tejón",
+    "3. ¿Qué estación te gusta más? \na) Verano \nb) Invierno \nc) Otoño \nd) Primavera",
+    //añadir 7 preguntas más
+];
+
+//Iterador para sacar todas las preguntas por pantalla
+function startQuestions(){
+    for (let i = 0; i <= questions.length; i++){
+        let selectHouse = prompt(questions[i]);
+
+        switch (selectHouse.toLowerCase()) {
+            case "a":
+            griffindor += 20;
+            break;
+        
+            case "b":
+            slyhering += 20;
+            break;
+        
+            case "c":
+            ravenclaw += 20;
+            break;
+        
+            case "d":
+            hufflepuff += 20;
+            break;
+        
+            default:
+            alert("Por favor, selecciona una opción válida.");
+        
+            i--;
+            break;
+        }
+    }
+};
+
+
+btn.addEventListener("click", startQuestions);
+
+
+
 
 
 /*function pregunta(){
