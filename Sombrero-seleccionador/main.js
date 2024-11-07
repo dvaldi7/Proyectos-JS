@@ -36,53 +36,80 @@ text.innerHTML = `<p>Hola ${name}, un placer conocerte. Veamos a que casa
 
 //preguntas para asignar casa
 const questions = [
-    "1. ¿Qué color te gusta más? \na) Rojo \nb) Verde \nc) Azul \nd) Amarillo",
-    "2. ¿Que animal te gusta más?: \na) León \nb) Serpiente \nc) Cuervo \nd) Tejón",
-    "3. ¿Qué estación te gusta más? \na) Verano \nb) Invierno \nc) Otoño \nd) Primavera",
-    "4. ¿Qué actividad prefieres? \na) Deportes \nb) Juegos de estrategia \nc) Lectura \nd) Jardinería",
-    /*"5. ¿Cómo enfrentas un reto? \na) Con valentía \nb) Con astucia \nc) Con inteligencia \nd) Con paciencia",
-    "6. ¿Qué valor aprecias más? \na) Coraje \nb) Ambición \nc) Sabiduría \nd) Lealtad",
-    "7. ¿Cuál es tu materia favorita? \na) Defensa contra las artes oscuras \nb) Pociones \nc) Encantamientos \nd) Herbología",
-    "8. ¿Qué lugar prefieres? \na) Montañas \nb) Bosques \nc) Playas \nd) Campos",
-    "9. ¿Qué música prefieres? \na) Rock \nb) Electrónica \nc) Clásica \nd) Folk",
-    "10. ¿Qué talento te gustaría tener? \na) Fuerza \nb) Sigilo \nc) Conocimiento \nd) Empatía"
-    */
+    { 
+        question: "1. ¿Qué valor consideras más importante? \na) Ambición \nb) Sabiduría \nc) Lealtad \nd) Valentía",
+        answers: { "a": "slytherin", "b": "ravenclaw", "c": "hufflepuff", "d": "griffindor" }
+    },
+    { 
+        question: "2. ¿Qué animal prefieres? \na) Serpiente \nb) Águila \nc) León \nd) Tejón",
+        answers: { "a": "slytherin", "b": "ravenclaw", "c": "griffindor", "d": "hufflepuff" }
+    },
+    { 
+        question: "3. ¿Cuál de estos pasatiempos te atrae más? \na) Resolver acertijos \nb) Ayudar a amigos \nc) Liderar proyectos \nd) Explorar lugares peligrosos",
+        answers: { "a": "ravenclaw", "b": "hufflepuff", "c": "slytherin", "d": "griffindor" }
+    },
+    { 
+        question: "4. ¿Cómo prefieres enfrentar tus problemas? \na) Con estrategia \nb) Con audacia \nc) Con trabajo en equipo \nd) Con astucia",
+        answers: { "a": "ravenclaw", "b": "griffindor", "c": "hufflepuff", "d": "slytherin" }
+    },
+    { 
+        question: "5. ¿Qué tipo de amigos prefieres? \na) Leales \nb) Inteligentes \nc) Valientes \nd) Ambiciosos",
+        answers: { "a": "hufflepuff", "b": "ravenclaw", "c": "griffindor", "d": "slytherin" }
+    },
+    { 
+        question: "6. ¿Qué lugar prefieres visitar? \na) Una biblioteca antigua \nb) Un bosque misterioso \nc) Una cueva de dragones \nd) Un campo de entrenamiento",
+        answers: { "a": "ravenclaw", "b": "slytherin", "c": "griffindor", "d": "hufflepuff" }
+    },
+    { 
+        question: "7. ¿Qué cualidad valoras en ti mismo? \na) Curiosidad \nb) Determinación \nc) Coraje \nd) Honestidad",
+        answers: { "a": "ravenclaw", "b": "slytherin", "c": "griffindor", "d": "hufflepuff" }
+    },
+    { 
+        question: "8. ¿Qué carrera te llama más la atención? \na) Liderazgo empresarial \nb) Investigación científica \nc) Ayuda comunitaria \nd) Aventurero",
+        answers: { "a": "slytherin", "b": "ravenclaw", "c": "hufflepuff", "d": "griffindor" }
+    },
+    { 
+        question: "9. ¿Qué tipo de magia te interesa más? \na) Encantamientos \nb) Pociones avanzadas \nc) Defensa contra las artes oscuras \nd) Sanación",
+        answers: { "a": "ravenclaw", "b": "slytherin", "c": "griffindor", "d": "hufflepuff" }
+    },
+    { 
+        question: "10. ¿Cómo prefieres pasar el tiempo? \na) Estudiando \nb) Trabajando en equipo \nc) Compitiendo \nd) Practicando deportes de riesgo",
+        answers: { "a": "ravenclaw", "b": "hufflepuff", "c": "slytherin", "d": "griffindor" }
+    }
 ];
 
 //Iterador para sacar todas las preguntas por pantalla
 function startQuestions(){
     for (let i = 0; i <= questions.length-1; i++){
-        let selectHouse = prompt(questions[i]);
-
-        switch (selectHouse.toLowerCase()) {
-            case "a":
-            griffindor += 20;
-            break;
+        let selectHouse = prompt(questions[i].question).toLowerCase();
+    
+        let selectedHouse = questions[i].answers[selectHouse];
         
-            case "b":
-            slytherin += 20;
-            break;
-        
-            case "c":
-            ravenclaw += 20;
-            break;
-        
-            case "d":
-            hufflepuff += 20;
-            break;
-        
-            default:
+        if (selectedHouse) {
+            switch (selectedHouse) {
+                case "griffindor":
+                    griffindor += 20;
+                    break;
+                case "slytherin":
+                    slytherin += 20;
+                    break;
+                case "ravenclaw":
+                    ravenclaw += 20;
+                    break;
+                case "hufflepuff":
+                    hufflepuff += 20;
+                    break;
+            }
+        } else {
             alert("Por favor, selecciona una opción válida.");
-        
-            i--; //Repite la pregunta si la respuesta no es válida
-            break;
+            i--; // Repetir la pregunta si la respuesta no es válida
         }
     }
     // Mostrar resultados en consola 
     console.log(`Griffindor: ${griffindor}, Slytherin: ${slytherin},
          Ravenclaw: ${ravenclaw}, Hufflepuff: ${hufflepuff}`);
     
-    //Verificar que casa tiene más puntos (o si se ha producido un empate)
+    //Verificar qué casa tiene más puntos (o si se ha producido un empate)
     let maxScore = Math.max(griffindor, slytherin, ravenclaw, hufflepuff);
 
     let houses = [];
