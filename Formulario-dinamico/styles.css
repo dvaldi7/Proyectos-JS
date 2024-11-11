@@ -1,0 +1,23 @@
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+}
+
+.layout{
+    background-color: #F7F8FD;
+}
+
+.layout_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_container{
+    
+}
